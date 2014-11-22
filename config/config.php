@@ -13,3 +13,10 @@ $GLOBALS['TL_SECURITY_ADVISORY'] = ['Oneup\SecurityAdvisory\SecurityCheck'];
 if (isset($GLOBALS['TL_CONFIG']['securityAdvisory_enableCron']) && true === $GLOBALS['TL_CONFIG']['securityAdvisory_enableCron']) {
     $GLOBALS['TL_CRON'][$GLOBALS['TL_CONFIG']['securityAdvisory_cronCycle']][] = array('AuditCronJob', 'run');
 }
+
+// Add EventListeners
+if (!isset($GLOBALS['TL_HOOKS']['parseBackendTemplate'])) {
+    $GLOBALS['TL_HOOKS']['parseBackendTemplate'] = [];
+}
+
+$GLOBALS['TL_HOOKS']['securityAuditPerformed'][] = array('Oneup\SecurityAdvisory\Listener\LogListener', 'onSecurityAudit');

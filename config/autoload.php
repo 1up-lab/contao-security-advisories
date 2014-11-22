@@ -2,7 +2,8 @@
 
 ClassLoader::addNamespaces([
     'Oneup',
-    'Oneup\SecurityAdvisory'
+    'Oneup\SecurityAdvisory',
+    'Oneup\SecurityAdvisory\Listener'
 ]);
 
 ClassLoader::addClasses([
@@ -13,7 +14,11 @@ ClassLoader::addClasses([
     // Classes
     'Oneup\SecurityAdvisory\Audit' => 'system/modules/security-advisories/classes/Audit.php',
     'Oneup\SecurityAdvisory\AuditCronJob' => 'system/modules/security-advisories/AuditCronJob.php',
-    'Oneup\SecurityAdvisory\AuditRunner' => 'system/modules/security-advisories/classes/AuditRunner.php'
+    'Oneup\SecurityAdvisory\AuditRunner' => 'system/modules/security-advisories/classes/AuditRunner.php',
+
+    // Listeners
+    'Oneup\SecurityAdvisory\Listener\LogListener' => 'system/modules/security-advisories/listeners/LogListener.php',
+
 ]);
 
 
