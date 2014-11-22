@@ -29,6 +29,8 @@ class SecurityCheck extends \Backend implements \executable
             $objTemplate->isVulnerable = $isVulnerable;
         }
 
+        $objTemplate->lastChecked = \Date::parse($GLOBALS['TL_CONFIG']['datimFormat'], filemtime(TL_ROOT . '/system/cache/security-audit.json'));
+
         // Language string
         $objTemplate->vulnerabilityFound = $GLOBALS['TL_LANG']['tl_security_advisory']['vulnerabilityFound'];
         $objTemplate->noVulnerabilityFound = $GLOBALS['TL_LANG']['tl_security_advisory']['noVulnerabilityFound'];
