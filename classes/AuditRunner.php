@@ -4,7 +4,7 @@ namespace Oneup\SecurityAdvisory;
 
 use GuzzleHttp\Client;
 
-class AuditRunner
+class AuditRunner extends \System
 {
     protected $lockFiles;
     protected $auditCache;
@@ -35,6 +35,16 @@ class AuditRunner
         }
 
         $this->cacheAudit($audit);
+
+        // HOOK: add custom logic
+        if (isset($GLOBALS['TL_HOOKS']['securityAuditPerformed']) && is_array($GLOBALS['TL_HOOKS']['securityAuditPerformed']))
+        {
+            foreach ($GLOBALS['TL_HOOKS']['securityAuditPerformed'] as $callback)
+            {
+                $this->import($callback[0]);
+                $this->$callback[0]->$callback[1]($audit);
+            }
+        }
 
         return $audit;
     }
