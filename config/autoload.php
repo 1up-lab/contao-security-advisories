@@ -12,6 +12,7 @@ ClassLoader::addClasses([
 
     // Classes
     'Oneup\SecurityAdvisory\Audit' => 'system/modules/security-advisories/classes/Audit.php',
+    'Oneup\SecurityAdvisory\AuditCronJob' => 'system/modules/security-advisories/AuditCronJob.php',
     'Oneup\SecurityAdvisory\AuditRunner' => 'system/modules/security-advisories/classes/AuditRunner.php'
 ]);
 
