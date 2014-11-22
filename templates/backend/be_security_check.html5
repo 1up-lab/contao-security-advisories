@@ -1,7 +1,7 @@
 <div class="tl_security_advisories">
     <h2 class="sub_headline"><?php echo $this->headline; ?></h2>
 
-    <?php if ($this->checkPerformed): ?>
+    <?php if ($this->atLeastOneAuditPerformed): ?>
     <div class="tl_message">
         <?php if (!$this->isVulnerable): ?>
             <p class="tl_confirm" style="margin-bottom:9px;"><?php echo $this->noVulnerabilityFound; ?></p>
@@ -12,8 +12,15 @@
     <?php endif; ?>
 
     <div class="tl_message">
-        <p>Last checked: <?php echo $this->lastChecked ?></p>
+        <?php if ($this->atLeastOneAuditPerformed): ?>
+            <p class="tl_gray">Last checked: <?php echo $this->lastChecked ?></p>
+        <?php else: ?>
+            <p class="tl_error">No check performed yet.</p>
+        <?php endif; ?>
     </div>
+
+    <!-- Todo: Fix this -->
+    <br />
 
     <form action="" class="tl_form" method="post">
         <div class="tl_formbody_edit">

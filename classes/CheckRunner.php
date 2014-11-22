@@ -17,8 +17,6 @@ class CheckRunner
 
     public function run()
     {
-        return '["meep"]';
-
         $request = $this->guzzle->createRequest('POST', 'https://security.sensiolabs.org/check_lock', [
             'headers' => [
                 'Accept' => 'application/json'
