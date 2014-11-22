@@ -13,7 +13,7 @@ class AuditRunner extends \System
     public function __construct()
     {
         $this->lockFiles = [];
-        $this->auditCache = TL_ROOT . '/system/cache/security-audit.ser';
+        $this->auditCache = TL_ROOT . '/system/cache/security-audit.json';
         $this->guzzle = new Client();
     }
 
@@ -56,7 +56,7 @@ class AuditRunner extends \System
 
     public function cacheAudit(Audit $audit)
     {
-        $strAudit = serialize($audit);
+        $strAudit = json_encode($audit->getVulnerabilities());
         file_put_contents($this->auditCache, $strAudit);
     }
 
@@ -68,6 +68,15 @@ class AuditRunner extends \System
 
         $strAudit = file_get_contents($this->auditCache);
         return unserialize($strAudit);
+    }
+
+    public function getCacheLastModified()
+    {
+        if (!$this->hasRunOnce()) {
+            throw new \BadMethodCallException('No audit cache found.');
+        }
+
+        return filemtime($this->auditCache);
     }
 
     public function addLockFile($path)

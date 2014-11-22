@@ -11,8 +11,6 @@ class SecurityCheck extends \Backend implements \executable
     public function __construct()
     {
         parent::__construct();
-
-        $this->auditCache = TL_ROOT . '/system/cache/security-audit.ser';
     }
 
     public function run()
@@ -43,7 +41,10 @@ class SecurityCheck extends \Backend implements \executable
 
         $objTemplate->vulnerabilityFound = $GLOBALS['TL_LANG']['tl_security_advisory']['vulnerabilityFound'];
         $objTemplate->noVulnerabilityFound = $GLOBALS['TL_LANG']['tl_security_advisory']['noVulnerabilityFound'];
-        $objTemplate->lastChecked = \Date::parse($GLOBALS['TL_CONFIG']['datimFormat'], filemtime($this->auditCache));
+
+        if ($auditRunner->hasRunOnce()) {
+            $objTemplate->lastChecked = \Date::parse($GLOBALS['TL_CONFIG']['datimFormat'], $auditRunner->getCacheLastModified());
+        }
 
         // Language string
         $objTemplate->headline = $GLOBALS['TL_LANG']['tl_security_advisory']['headline'];

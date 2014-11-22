@@ -51,11 +51,11 @@
         <div class="tl_submit_container">
             <input type="submit" class="tl_submit" value="<?php echo $this->runSecurityCheck; ?>">
 
+            <?php if ($this->hasRunOnce): ?>
             <div class="last-checked">
-                <?php if ($this->hasRunOnce): ?>
                 <p class="tl_gray">Last checked: <?php echo $this->lastChecked ?></p>
-                <?php endif; ?>
             </div>
+            <?php endif; ?>
         </div>
     </form>
 </div>
