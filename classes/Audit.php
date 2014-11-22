@@ -2,24 +2,21 @@
 
 namespace Oneup\SecurityAdvisory;
 
-class CheckParser
+class Audit
 {
-    public function isVulnerable($response)
-    {
-        // Decode and get it as an array instead of stdClass
-        $response = json_decode($response);
-        $response = (array) $response;
+    protected $vulnerabilities;
 
-        return count($response) !== 0;
+    public function __construct()
+    {
+        $this->vulnerabilities = [];
     }
 
-    public function parse($response)
+    public function addResponse($response)
     {
         // Decode and get it as an array instead of stdClass
         $response = json_decode($response, true);
 
         $vulnerabilities = [];
-
         foreach ($response as $key => $vulnerability) {
             $data = [
                 'name' => $key,
@@ -30,6 +27,16 @@ class CheckParser
             $vulnerabilities[] = $data;
         }
 
-        return $vulnerabilities;
+        $this->vulnerabilities = $vulnerabilities;
+    }
+
+    public function isVulnerable()
+    {
+        return count($this->vulnerabilities) > 0;
+    }
+
+    public function getVulnerabilities()
+    {
+        return $this->vulnerabilities;
     }
 }

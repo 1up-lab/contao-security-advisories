@@ -1,7 +1,7 @@
 <div class="tl_security_advisories">
     <h2 class="sub_headline"><?php echo $this->headline; ?></h2>
 
-    <?php if ($this->atLeastOneAuditPerformed): ?>
+    <?php if ($this->hasRunOnce): ?>
     <div class="tl_message">
         <?php if (!$this->isVulnerable): ?>
             <p class="tl_confirm" style="margin-bottom:9px;"><?php echo $this->noVulnerabilityFound; ?></p>
@@ -34,6 +34,10 @@
 
         <?php endif; ?>
     </div>
+    <?php else: ?>
+        <div class="tl_message">
+            <p class="tl_error">No check performed yet.</p>
+        </div>
     <?php endif; ?>
 
     <!-- Todo: Fix this -->
@@ -48,10 +52,8 @@
             <input type="submit" class="tl_submit" value="<?php echo $this->runSecurityCheck; ?>">
 
             <div class="last-checked">
-                <?php if ($this->atLeastOneAuditPerformed): ?>
+                <?php if ($this->hasRunOnce): ?>
                 <p class="tl_gray">Last checked: <?php echo $this->lastChecked ?></p>
-                <?php else: ?>
-                <p class="tl_error">No check performed yet.</p>
                 <?php endif; ?>
             </div>
         </div>

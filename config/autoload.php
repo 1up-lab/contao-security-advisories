@@ -6,13 +6,13 @@ ClassLoader::addNamespaces([
 ]);
 
 ClassLoader::addClasses([
-    // Modules
+    // Modules & Callbacks
     'Oneup\SecurityAdvisory\ModuleSecurityAdvisory' => 'system/modules/security-advisories/modules/ModuleSecurityAdvisory.php',
+    'Oneup\SecurityAdvisory\SecurityCheck' => 'system/modules/security-advisories/classes/SecurityCheck.php',
 
     // Classes
-    'Oneup\SecurityAdvisory\SecurityCheck' => 'system/modules/security-advisories/classes/SecurityCheck.php',
-    'Oneup\SecurityAdvisory\CheckRunner' => 'system/modules/security-advisories/classes/CheckRunner.php',
-    'Oneup\SecurityAdvisory\CheckParser' => 'system/modules/security-advisories/classes/CheckParser.php',
+    'Oneup\SecurityAdvisory\Audit' => 'system/modules/security-advisories/classes/Audit.php',
+    'Oneup\SecurityAdvisory\AuditRunner' => 'system/modules/security-advisories/classes/AuditRunner.php'
 ]);
 
 
