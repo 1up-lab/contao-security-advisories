@@ -2,7 +2,7 @@
     <h2 class="sub_headline"><?php echo $this->headline; ?></h2>
 
     <?php if ($this->checkPerformed): ?>
-    <div class="tl_message" id="lu_message">
+    <div class="tl_message">
         <?php if (!$this->isVulnerable): ?>
             <p class="tl_confirm" style="margin-bottom:9px;"><?php echo $this->noVulnerabilityFound; ?></p>
         <?php else: ?>
@@ -10,6 +10,10 @@
         <?php endif; ?>
     </div>
     <?php endif; ?>
+
+    <div class="tl_message">
+        <p>Last checked: <?php echo $this->lastChecked ?></p>
+    </div>
 
     <form action="" class="tl_form" method="post">
         <div class="tl_formbody_edit">
