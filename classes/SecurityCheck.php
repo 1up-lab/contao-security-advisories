@@ -12,7 +12,7 @@ class SecurityCheck extends \Backend implements \executable
     {
         parent::__construct();
 
-        $this->auditCache = TL_ROOT . '/system/cache/security-audit.json';
+        $this->auditCache = TL_ROOT . '/system/cache/security-audit.ser';
     }
 
     public function run()
