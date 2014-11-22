@@ -1,0 +1,23 @@
+<div class="tl_security_advisories">
+    <h2 class="sub_headline"><?php echo $this->headline; ?></h2>
+
+    <?php if ($this->checkPerformed): ?>
+    <div class="tl_message" id="lu_message">
+        <?php if (!$this->isVulnerable): ?>
+            <p class="tl_confirm" style="margin-bottom:9px;"><?php echo $this->noVulnerabilityFound; ?></p>
+        <?php else: ?>
+            <p class="tl_error" style="margin-bottom:9px;"><?php echo $this->vulnerabilityFound; ?></p>
+        <?php endif; ?>
+    </div>
+    <?php endif; ?>
+
+    <form action="" class="tl_form" method="post">
+        <div class="tl_formbody_edit">
+            <input type="hidden" name="run" value="1" />
+            <input type="hidden" name="REQUEST_TOKEN" value="<?php echo $this->requestToken; ?>" />
+        </div>
+        <div class="tl_submit_container">
+            <input type="submit" class="tl_submit" value="<?php echo $this->runSecurityCheck; ?>">
+        </div>
+    </form>
+</div>
