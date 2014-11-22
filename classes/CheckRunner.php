@@ -26,6 +26,6 @@ class CheckRunner
             ]
         ]);
 
-        return $this->guzzle->send($request);
+        return $this->guzzle->send($request)->getBody()->getContents();
     }
 }

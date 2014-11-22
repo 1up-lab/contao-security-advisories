@@ -26,6 +26,7 @@ class SecurityCheck extends \Backend implements \executable
         if (\Input::post('run') != '') {
             // Perform an actual check against the web service and cache the result afterwards
             $response = $runner->run();
+
             $this->cacheAudit($response);
         } else {
             $response = $this->getCachedAudit();
@@ -35,10 +36,13 @@ class SecurityCheck extends \Backend implements \executable
         $objTemplate->atLeastOneAuditPerformed = $atLeastOneAuditPerformed;
 
         if ($atLeastOneAuditPerformed) {
-
             // Check if response is vulnerable
             $isVulnerable = $parser->isVulnerable($response);
             $objTemplate->isVulnerable = $isVulnerable;
+
+            if ($isVulnerable) {
+                $objTemplate->vulnerabilities = $parser->parse($response);
+            }
 
             $objTemplate->vulnerabilityFound = $GLOBALS['TL_LANG']['tl_security_advisory']['vulnerabilityFound'];
             $objTemplate->noVulnerabilityFound = $GLOBALS['TL_LANG']['tl_security_advisory']['noVulnerabilityFound'];

@@ -7,6 +7,31 @@
             <p class="tl_confirm" style="margin-bottom:9px;"><?php echo $this->noVulnerabilityFound; ?></p>
         <?php else: ?>
             <p class="tl_error" style="margin-bottom:9px;"><?php echo $this->vulnerabilityFound; ?></p>
+
+            <div class="vulnerabilites">
+                <ul>
+                    <?php foreach ($this->vulnerabilities as $vulnerability): ?>
+                    <li>
+                        <strong><?php echo $vulnerability['name']; ?></strong>
+                        <i><?php echo $vulnerability['version']; ?></i>
+
+                        <ul>
+                            <?php foreach ($vulnerability['advisories'] as $advisory): ?>
+                            <li>
+                                <a href="<?php echo $advisory['link']; ?>" target="_blank">
+                                <?php echo $advisory['title']; ?>
+
+                                <?php if (strlen($advisory['cve']) > 0): ?>
+                                <i><?php echo $advisory['cve']; ?></i>
+                                <?php endif; ?>
+                                </a>
+                            </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
         <?php endif; ?>
     </div>
     <?php endif; ?>
