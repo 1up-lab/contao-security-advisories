@@ -9,7 +9,5 @@ class AuditCronJob
         $auditRunner = new AuditRunner();
         $auditRunner->addLockFile(TL_ROOT . '/composer/composer.lock');
         $auditRunner->run();
-
-        die("run");
     }
 }
