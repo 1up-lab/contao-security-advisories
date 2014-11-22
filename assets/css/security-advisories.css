@@ -1,3 +1,8 @@
 a.navigation.security_advisory {
     background-image: url("../images/module.gif");
 }
+
+.tl_security_advisories .last-checked {
+    display:inline-block;
+    margin-left:10px;
+}

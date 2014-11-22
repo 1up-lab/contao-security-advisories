@@ -8,41 +8,33 @@
         <?php else: ?>
             <p class="tl_error" style="margin-bottom:9px;"><?php echo $this->vulnerabilityFound; ?></p>
 
-            <div class="vulnerabilites">
-                <ul>
-                    <?php foreach ($this->vulnerabilities as $vulnerability): ?>
-                    <li>
-                        <strong><?php echo $vulnerability['name']; ?></strong>
-                        <i><?php echo $vulnerability['version']; ?></i>
+        <table class="tl_listing">
+            <?php foreach ($this->vulnerabilities as $vulnerability): ?>
+                <tr>
+                    <td colspan="2" class="tl_folder_tlist">
+                        <?php echo $vulnerability['name']; ?>
+                        <span class="tl_gray"><?php echo $vulnerability['version']; ?></span>
+                    </td>
+                </tr>
+                <?php foreach ($vulnerability['advisories'] as $advisory): ?>
+                    <tr class="even">
+                        <td class="tl_file_list">
+                            <?php if (strlen($advisory['cve']) > 0): ?>
+                                <span class="tl_gray"><?php echo $advisory['cve']; ?></span>
+                            <?php endif; ?>
+                            <?php echo $advisory['title']; ?>
+                        </td>
+                        <td class="tl_file_list tl_right_nowrap">
+                            <a href="<?php echo $advisory['link']; ?>" target="_blank" class="show"><img src="system/themes/default/images/show.gif" width="14" height="16" alt="Open"></a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            <?php endforeach; ?>
+        </table>
 
-                        <ul>
-                            <?php foreach ($vulnerability['advisories'] as $advisory): ?>
-                            <li>
-                                <a href="<?php echo $advisory['link']; ?>" target="_blank">
-                                <?php echo $advisory['title']; ?>
-
-                                <?php if (strlen($advisory['cve']) > 0): ?>
-                                <i><?php echo $advisory['cve']; ?></i>
-                                <?php endif; ?>
-                                </a>
-                            </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </li>
-                    <?php endforeach; ?>
-                </ul>
-            </div>
         <?php endif; ?>
     </div>
     <?php endif; ?>
-
-    <div class="tl_message">
-        <?php if ($this->atLeastOneAuditPerformed): ?>
-            <p class="tl_gray">Last checked: <?php echo $this->lastChecked ?></p>
-        <?php else: ?>
-            <p class="tl_error">No check performed yet.</p>
-        <?php endif; ?>
-    </div>
 
     <!-- Todo: Fix this -->
     <br />
@@ -54,6 +46,14 @@
         </div>
         <div class="tl_submit_container">
             <input type="submit" class="tl_submit" value="<?php echo $this->runSecurityCheck; ?>">
+
+            <div class="last-checked">
+                <?php if ($this->atLeastOneAuditPerformed): ?>
+                <p class="tl_gray">Last checked: <?php echo $this->lastChecked ?></p>
+                <?php else: ?>
+                <p class="tl_error">No check performed yet.</p>
+                <?php endif; ?>
+            </div>
         </div>
     </form>
 </div>
