@@ -6,6 +6,10 @@
         <source>Security Advisory</source>
         <target>Security Advisory</target>
       </trans-unit>
+      <trans-unit id="tl_security_advisory.disclaimer">
+        <source>This check works by comparing the composer.lock against an open vulnerability database. A clean check does not mean there are absolutely no security problems whatsoever.</source>
+        <target>Dieser Check vergleicht das composer.lock Ihres Projekts mit einer quelloffenen Sicherheitslückendatenbank. Keine Fehler bedeuten daher nicht zwingend, dass keine Probleme existieren.</target>
+      </trans-unit>
       <trans-unit id="tl_security_advisory.runSecurityCheck">
         <source>Run security check</source>
         <target>Security-Check starten</target>
