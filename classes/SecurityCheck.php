@@ -39,9 +39,6 @@ class SecurityCheck extends \Backend implements \executable
 
         $objTemplate->hasRunOnce = $auditRunner->hasRunOnce();
 
-        $objTemplate->vulnerabilityFound = $GLOBALS['TL_LANG']['tl_security_advisory']['vulnerabilityFound'];
-        $objTemplate->noVulnerabilityFound = $GLOBALS['TL_LANG']['tl_security_advisory']['noVulnerabilityFound'];
-
         if ($auditRunner->hasRunOnce()) {
             $objTemplate->lastChecked = \Date::parse($GLOBALS['TL_CONFIG']['datimFormat'], $auditRunner->getCacheLastModified());
         }
@@ -49,6 +46,10 @@ class SecurityCheck extends \Backend implements \executable
         // Language string
         $objTemplate->headline = $GLOBALS['TL_LANG']['tl_security_advisory']['headline'];
         $objTemplate->runSecurityCheck = $GLOBALS['TL_LANG']['tl_security_advisory']['runSecurityCheck'];
+        $objTemplate->auditOk = $GLOBALS['TL_LANG']['tl_security_advisory']['auditOk'];
+        $objTemplate->noAuditFound = $GLOBALS['TL_LANG']['tl_security_advisory']['noAuditFound'];
+        $objTemplate->auditFailed = $GLOBALS['TL_LANG']['tl_security_advisory']['auditFailed'];
+        $objTemplate->lastCheckedLabel = $GLOBALS['TL_LANG']['tl_security_advisory']['lastCheckedLabel'];
         $objTemplate->requestToken = RequestToken::get();
 
         return $objTemplate->parse();

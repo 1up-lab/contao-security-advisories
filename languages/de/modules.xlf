@@ -7,7 +7,7 @@
       </trans-unit>
       <trans-unit id="MOD.security_advisory.1">
         <source>Check your Contao and extensions against an open vulnerability database.</source>
-        <target>Prüfen Sie Ihre Contao-Installation und Extensions auf veröffentlichte Sicherheitslücken.</target>
+        <target>Prüfen Sie Ihre Contao-Installation und Extensions auf veröffentlichte Sicherheitsprobleme.</target>
       </trans-unit>
     </body>
   </file>

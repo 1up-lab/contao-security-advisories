@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+  <file datatype="php" original="system/modules/security-advisory/languages/de/tl_security_advisory.php" source-language="en">
+    <body>
+      <trans-unit id="tl_security_advisory.headline">
+        <source>Security Advisory</source>
+        <target>Security Advisory</target>
+      </trans-unit>
+      <trans-unit id="tl_security_advisory.runSecurityCheck">
+        <source>Run security check</source>
+        <target>Security-Check starten</target>
+      </trans-unit>
+      <trans-unit id="tl_security_advisory.auditOk">
+        <source>All systems secure.</source>
+        <target>Keine Sicherheitsprobleme gefunden.</target>
+      </trans-unit>
+      <trans-unit id="tl_security_advisory.auditNotFound">
+        <source>No audit created yet!</source>
+        <target>Bisher wurde noch kein Audit gestartet!</target>
+      </trans-unit>
+      <trans-unit id="tl_security_advisory.auditFailed">
+        <source>Security escalation found!</source>
+        <target>Ein Sicherheitsproblem wurde gefunden!</target>
+      </trans-unit>
+      <trans-unit id="tl_security_advisory.lastCheckedLabel">
+        <source>Last checked</source>
+        <target>Letzter Check</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
