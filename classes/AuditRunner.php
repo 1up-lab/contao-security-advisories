@@ -21,6 +21,7 @@ class AuditRunner extends \System
     {
         $audit = new Audit();
 
+        /*
         foreach ($this->lockFiles as $lockFile) {
             $request = $this->guzzle->createRequest('POST', 'https://security.sensiolabs.org/check_lock', [
                 'headers' => ['Accept' => 'application/json'],
@@ -35,6 +36,9 @@ class AuditRunner extends \System
         }
 
         $this->cacheAudit($audit);
+        */
+
+        $audit = $this->getCachedAudit();
 
         // HOOK: add custom logic
         if (isset($GLOBALS['TL_HOOKS']['securityAuditPerformed']) && is_array($GLOBALS['TL_HOOKS']['securityAuditPerformed']))

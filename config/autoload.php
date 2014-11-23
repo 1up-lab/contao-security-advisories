@@ -18,6 +18,7 @@ ClassLoader::addClasses([
 
     // Listeners
     'Oneup\SecurityAdvisory\Listener\LogListener' => 'system/modules/security-advisories/listeners/LogListener.php',
+    'Oneup\SecurityAdvisory\Listener\NotificationListener' => 'system/modules/security-advisories/listeners/NotificationListener.php',
 
 ]);
 

@@ -2,6 +2,22 @@
 <xliff version="1.1">
   <file datatype="php" original="system/modules/core/languages/en/tl_settings.php" source-language="en">
     <body>
+      <trans-unit id="tl_settings.minutely">
+        <source>minutely</source>
+      </trans-unit>
+      <trans-unit id="tl_settings.hourly">
+        <source>hourly</source>
+      </trans-unit>
+      <trans-unit id="tl_settings.daily">
+        <source>daily</source>
+      </trans-unit>
+      <trans-unit id="tl_settings.weekly">
+        <source>weekly</source>
+      </trans-unit>
+      <trans-unit id="tl_settings.monthly">
+        <source>monthly</source>
+      </trans-unit>
+
       <trans-unit id="tl_settings.securityAdvisory_legend">
         <source>Security Advisory</source>
       </trans-unit>
@@ -16,6 +32,30 @@
       </trans-unit>
       <trans-unit id="tl_settings.securityAdvisory_cronCycle.1">
         <source>The audit cycle used for the security audit cron job.</source>
+      </trans-unit>
+      <trans-unit id="tl_settings.securityAdvisory_enableNotifications.0">
+        <source>Enable Notifications</source>
+      </trans-unit>
+      <trans-unit id="tl_settings.securityAdvisory_enableNotifications.1">
+        <source>Enable notifications if you like to recieve an E-Mail after security audits.</source>
+      </trans-unit>
+      <trans-unit id="tl_settings.securityAdvisory_suppressManualAuditNotification.0">
+        <source>Suppress Notifications on manual audits.</source>
+      </trans-unit>
+      <trans-unit id="tl_settings.securityAdvisory_suppressManualAuditNotification.1">
+        <source>Do not send notifications when the audit was started manually. Especially useful for testing.</source>
+      </trans-unit>
+      <trans-unit id="tl_settings.securityAdvisory_onlyFailedNotifications.0">
+        <source>Only notify about failed audits.</source>
+      </trans-unit>
+      <trans-unit id="tl_settings.securityAdvisory_onlyFailedNotifications.1">
+        <source>Suppress notifications if the audit passed without security escalations.</source>
+      </trans-unit>
+      <trans-unit id="tl_settings.securityAdvisory_notificationMail.0">
+        <source>Recipients E-Mail</source>
+      </trans-unit>
+      <trans-unit id="tl_settings.securityAdvisory_notificationMail.1">
+        <source>If left empty, the configured system administrators address will be used.</source>
       </trans-unit>
     </body>
   </file>

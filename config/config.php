@@ -8,7 +8,6 @@ $GLOBALS['BE_MOD']['system']['security_advisory'] = [
 
 $GLOBALS['TL_SECURITY_ADVISORY'] = ['Oneup\SecurityAdvisory\SecurityCheck'];
 
-
 // Enable cron if necessary
 if (isset($GLOBALS['TL_CONFIG']['securityAdvisory_enableCron']) && true === $GLOBALS['TL_CONFIG']['securityAdvisory_enableCron']) {
     $GLOBALS['TL_CRON'][$GLOBALS['TL_CONFIG']['securityAdvisory_cronCycle']][] = array('AuditCronJob', 'run');
@@ -20,3 +19,8 @@ if (!isset($GLOBALS['TL_HOOKS']['parseBackendTemplate'])) {
 }
 
 $GLOBALS['TL_HOOKS']['securityAuditPerformed'][] = array('Oneup\SecurityAdvisory\Listener\LogListener', 'onSecurityAudit');
+
+// Enable notifications if necessary
+if (isset($GLOBALS['TL_CONFIG']['securityAdvisory_enableNotifications']) && true === $GLOBALS['TL_CONFIG']['securityAdvisory_enableNotifications']) {
+    $GLOBALS['TL_HOOKS']['securityAuditPerformed'][] = array('Oneup\SecurityAdvisory\Listener\NotificationListener', 'onSecurityAudit');
+}
