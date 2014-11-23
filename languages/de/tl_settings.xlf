@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+  <file datatype="php" original="system/modules/core/languages/de/tl_settings.php" source-language="en">
+    <body>
+      <trans-unit id="tl_settings.securityAdvisory_legend">
+        <source>Security Advisory</source>
+      </trans-unit>
+      <trans-unit id="tl_settings.securityAdvisory_enableCron.0">
+        <source>Enable recurrent check</source>
+        <target>Automatischer Check aktivieren</target>
+      </trans-unit>
+      <trans-unit id="tl_settings.securityAdvisory_enableCron.1">
+        <source>Enable a cron job which checks your composer locks recurrently.</source>
+        <target>Aktivert ein Cronjob, der Ihre Installation regelmässig auf Sicherheitslücken prüft.</target>
+      </trans-unit>
+      <trans-unit id="tl_settings.securityAdvisory_cronCycle.0">
+        <source>Audit cycle</source>
+        <target>Häufigkeit</target>
+      </trans-unit>
+      <trans-unit id="tl_settings.securityAdvisory_cronCycle.1">
+        <source>The audit cycle used for the security audit cron job.</source>
+        <target>Wie häufig der Cronjob ausgeführt wird.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
