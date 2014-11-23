@@ -6,9 +6,9 @@ class Audit
 {
     protected $vulnerabilities;
 
-    public function __construct()
+    public function __construct(array $vulnerabilities = [])
     {
-        $this->vulnerabilities = [];
+        $this->vulnerabilities = $vulnerabilities;
     }
 
     public function addResponse($response)

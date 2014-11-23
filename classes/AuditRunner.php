@@ -67,7 +67,9 @@ class AuditRunner extends \System
         }
 
         $strAudit = file_get_contents($this->auditCache);
-        return unserialize($strAudit);
+        $vulnerabilites = json_decode($strAudit);
+
+        return new Audit($vulnerabilites);
     }
 
     public function getCacheLastModified()
