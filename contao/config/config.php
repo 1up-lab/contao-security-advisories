@@ -10,7 +10,7 @@ $GLOBALS['TL_SECURITY_ADVISORY'] = ['Oneup\SecurityAdvisory\Check\SecurityCheck'
 
 // Enable cron if necessary
 if (isset($GLOBALS['TL_CONFIG']['securityAdvisory_enableCron']) && true === $GLOBALS['TL_CONFIG']['securityAdvisory_enableCron']) {
-    $GLOBALS['TL_CRON'][$GLOBALS['TL_CONFIG']['securityAdvisory_cronCycle']][] = array('AuditCronJob', 'run');
+    $GLOBALS['TL_CRON'][$GLOBALS['TL_CONFIG']['securityAdvisory_cronCycle']][] = array('Oneup\SecurityAdvisory\Cron\AuditCronJob', 'run');
 }
 
 // Add EventListeners
