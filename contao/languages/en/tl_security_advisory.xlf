@@ -6,7 +6,7 @@
         <source>Security Advisory</source>
       </trans-unit>
       <trans-unit id="tl_security_advisory.disclaimer">
-        <source>This check works by comparing the &lt;pre&gt;composer.lock&lt;/pre&gt; against an open vulnerability database. A clean check does not mean there are absolutely no security problems whatsoever.</source>
+        <source>This check works by comparing the composer.lock against an open vulnerability database. A clean check does not mean there are absolutely no security problems whatsoever.</source>
       </trans-unit>
       <trans-unit id="tl_security_advisory.runSecurityCheck">
         <source>Run security audit</source>
@@ -22,6 +22,9 @@
       </trans-unit>
       <trans-unit id="tl_security_advisory.lastCheckedLabel">
         <source>Last checked</source>
+      </trans-unit>
+      <trans-unit id="tl_security_advisory.didNeverAnAudit">
+        <source>There was never made an audit on this system.</source>
       </trans-unit>
 
       <trans-unit id="tl_security_advisory.mail_subject_ok">

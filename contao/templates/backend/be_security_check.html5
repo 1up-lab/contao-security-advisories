@@ -35,7 +35,11 @@
     </div>
     <?php else: ?>
         <div class="tl_message">
+            <?php if ($this->isVulnerable === false): ?>
             <p class="tl_error"><?php echo $this->noAuditFound; ?><sup><strong>*</strong></sup></p>
+            <?php else: ?>
+            <p class="tl_error"><?php echo $this->noAuditFound; ?><?php echo $this->didNeverAnAudit; ?><sup><strong>*</strong></sup></p>
+            <?php endif; ?>
         </div>
     <?php endif; ?>
 

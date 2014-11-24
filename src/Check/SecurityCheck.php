@@ -53,6 +53,7 @@ class SecurityCheck extends \Backend implements \executable
         $objTemplate->auditFailed = $GLOBALS['TL_LANG']['tl_security_advisory']['auditFailed'];
         $objTemplate->lastCheckedLabel = $GLOBALS['TL_LANG']['tl_security_advisory']['lastCheckedLabel'];
         $objTemplate->requestToken = RequestToken::get();
+        $objTemplate->didNeverAnAudit = $GLOBALS['TL_LANG']['tl_security_advisory']['didNeverAnAudit'];
 
         return $objTemplate->parse();
     }
