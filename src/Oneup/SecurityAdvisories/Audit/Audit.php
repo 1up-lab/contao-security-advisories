@@ -1,6 +1,6 @@
 <?php
 
-namespace Oneup\SecurityAdvisory;
+namespace Oneup\SecurityAdvisory\Audit;
 
 class Audit
 {

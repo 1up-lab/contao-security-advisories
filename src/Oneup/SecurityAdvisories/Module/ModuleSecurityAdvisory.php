@@ -1,6 +1,6 @@
 <?php
 
-namespace Oneup\SecurityAdvisory;
+namespace Oneup\SecurityAdvisory\Module;
 
 class ModuleSecurityAdvisory extends \BackendModule
 {

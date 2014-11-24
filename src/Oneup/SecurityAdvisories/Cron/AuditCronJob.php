@@ -1,6 +1,8 @@
 <?php
 
-namespace Oneup\SecurityAdvisory;
+namespace Oneup\SecurityAdvisory\Cron;
+
+use Oneup\SecurityAdvisory\Audit\AuditRunner;
 
 class AuditCronJob
 {
