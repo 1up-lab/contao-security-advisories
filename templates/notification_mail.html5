@@ -1,0 +1,14 @@
+<?php echo $this->headline; ?>
+
+
+<?php if (!$this->isVulnerable): ?>
+<?php echo $this->bodyOk; ?>
+<?php else: ?>
+<?php echo $this->bodyFailed; ?>
+
+<?php foreach ($this->vulnerabilites as $vulnerability): ?>
+<?php foreach ($vulnerability['advisories'] as $advisory): ?>
+    - <?php echo sprintf('%s (%s): %s', $vulnerability['name'], $vulnerability['version'], $advisory['title']); ?>
+<?php endforeach; ?>
+<?php endforeach; ?>
+<?php endif; ?>

@@ -6,10 +6,10 @@
         <source>Security Advisory</source>
       </trans-unit>
       <trans-unit id="tl_security_advisory.disclaimer">
-        <source>This check works by comparing the composer.lock against an open vulnerability database. A clean check does not mean there are absolutely no security problems whatsoever.</source>
+        <source>This check works by comparing the &lt;pre&gt;composer.lock&lt;/pre&gt; against an open vulnerability database. A clean check does not mean there are absolutely no security problems whatsoever.</source>
       </trans-unit>
       <trans-unit id="tl_security_advisory.runSecurityCheck">
-        <source>Run security check</source>
+        <source>Run security audit</source>
       </trans-unit>
       <trans-unit id="tl_security_advisory.auditOk">
         <source>All systems secure.</source>
@@ -22,6 +22,22 @@
       </trans-unit>
       <trans-unit id="tl_security_advisory.lastCheckedLabel">
         <source>Last checked</source>
+      </trans-unit>
+
+      <trans-unit id="tl_security_advisory.mail_subject_ok">
+        <source>Security audit succeeded on %s</source>
+      </trans-unit>
+      <trans-unit id="tl_security_advisory.mail_subject_failed">
+        <source>Security audit reveiled potentail vulnerabilites on %s</source>
+      </trans-unit>
+      <trans-unit id="tl_security_advisory.mail_headline">
+        <source>A security audit was performed</source>
+      </trans-unit>
+      <trans-unit id="tl_security_advisory.mail_body_ok">
+        <source>A security audit was performed which succeeded without warnings.</source>
+      </trans-unit>
+      <trans-unit id="tl_security_advisory.mail_body_failed">
+        <source>A security audit was performed which reveiled the following problems.</source>
       </trans-unit>
     </body>
   </file>

@@ -22,13 +22,32 @@ class NotificationListener
             return;
         }
 
-        if ($onlyFailed && $audit->isVulnerable()) {
+        if ($onlyFailed && !$audit->isVulnerable()) {
             return;
         }
 
+        // Load language file
+        \System::loadLanguageFile('tl_security_advisory');
+
         $address = strlen($notifiactionMail) > 0 ? $notifiactionMail : $administratorMail;
 
-        // Todo: Send E-Mail
+        $objEmail= new \Email();
+        $objEmail->from = $GLOBALS['TL_ADMIN_EMAIL'];
+        $objEmail->fromName = $GLOBALS['TL_ADMIN_NAME'];
+        $objEmail->subject = sprintf($GLOBALS['TL_LANG']['tl_security_advisory'][$audit->isVulnerable() ? 'mail_subject_failed' : 'mail_subject_ok'], \Idna::decode(\Environment::get('host')));
+
+        $objTemplate = new \FrontendTemplate('notification_mail');
+        $objTemplate->headline = $GLOBALS['TL_LANG']['tl_security_advisory']['mail_headline'];
+        $objTemplate->bodyOk = $GLOBALS['TL_LANG']['tl_security_advisory']['mail_body_ok'];
+        $objTemplate->bodyFailed = $GLOBALS['TL_LANG']['tl_security_advisory']['mail_body_failed'];
+
+        $objTemplate->isVulnerable = $audit->isVulnerable();
+        $objTemplate->vulnerabilites = $audit->getVulnerabilities();
+
+        // Set template as text mail body.
+        $objEmail->text = $objTemplate->parse();
+
+        $objEmail->sendTo($address);
     }
 
     /**

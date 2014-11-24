@@ -8,11 +8,11 @@
       </trans-unit>
       <trans-unit id="tl_security_advisory.disclaimer">
         <source>This check works by comparing the composer.lock against an open vulnerability database. A clean check does not mean there are absolutely no security problems whatsoever.</source>
-        <target>Dieser Check vergleicht das composer.lock Ihres Projekts mit einer quelloffenen Sicherheitslückendatenbank. Keine Fehler bedeuten daher nicht zwingend, dass keine Probleme existieren.</target>
+        <target>Dieser Check vergleicht das &lt;code&gt;composer.lock&lt;/code&gt; Ihres Projekts mit einer quelloffenen Sicherheitslückendatenbank. Keine Fehler bedeuten daher nicht zwingend, dass keine Probleme existieren.</target>
       </trans-unit>
       <trans-unit id="tl_security_advisory.runSecurityCheck">
-        <source>Run security check</source>
-        <target>Security-Check starten</target>
+        <source>Run security audit</source>
+        <target>Security-Audit starten</target>
       </trans-unit>
       <trans-unit id="tl_security_advisory.auditOk">
         <source>All systems secure.</source>
@@ -29,6 +29,27 @@
       <trans-unit id="tl_security_advisory.lastCheckedLabel">
         <source>Last checked</source>
         <target>Letzter Check</target>
+      </trans-unit>
+
+      <trans-unit id="tl_security_advisory.mail_subject_ok">
+        <source>Security audit succeeded on %s</source>
+        <target>Security-Audit ohne Warnung abgeschlossen.</target>
+      </trans-unit>
+      <trans-unit id="tl_security_advisory.mail_subject_failed">
+        <source>Security audit reveiled potentail vulnerabilites on %s</source>
+        <target>Ein Security-Audit hat potentielle Sicherheitsprobleme auf %s gefunden</target>
+      </trans-unit>
+      <trans-unit id="tl_security_advisory.mail_headline">
+        <source>A security audit was performed</source>
+        <target>Ein Security-Audit wurde durchgeführt</target>
+      </trans-unit>
+      <trans-unit id="tl_security_advisory.mail_body_ok">
+        <source>A security audit was performed which succeeded without warnings.</source>
+        <target>Ein Security-Audit wurde durchgeführt und ohne Warnung abgeschlossen.</target>
+      </trans-unit>
+      <trans-unit id="tl_security_advisory.mail_body_failed">
+        <source>A security audit was performed which reveiled the following problems.</source>
+        <target>in Security-Audit wurde durchgeführt und hat die folgenden potentiellen Sicherheitslücken gefunden.</target>
       </trans-unit>
     </body>
   </file>
