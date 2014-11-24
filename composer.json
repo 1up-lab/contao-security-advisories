@@ -35,13 +35,8 @@
         "phpunit/phpunit": "~3.7"
     },
     "autoload": {
-        "psr-0": {
-            "Oneup": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-0": {
-            "Oneup\\Test": "tests"
+        "psr-4": {
+            "Oneup\\SecurityAdvisory\\": "src"
         }
     },
     "extra": {

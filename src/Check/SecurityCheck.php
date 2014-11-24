@@ -3,6 +3,7 @@
 namespace Oneup\SecurityAdvisory\Check;
 
 use Contao\RequestToken;
+use Oneup\SecurityAdvisory\Audit\AuditRunner;
 
 class SecurityCheck extends \Backend implements \executable
 {
