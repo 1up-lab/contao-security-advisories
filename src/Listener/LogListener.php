@@ -2,7 +2,7 @@
 
 namespace Oneup\SecurityAdvisory\Listener;
 
-use Oneup\SecurityAdvisory\Audit;
+use Oneup\SecurityAdvisory\Audit\Audit;
 
 class LogListener
 {
