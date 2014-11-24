@@ -39,6 +39,11 @@
             "Oneup\\SecurityAdvisory\\": "src"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Oneup\\Test\\SecurityAdvisory\\": "tests"
+        }
+    },
     "extra": {
         "contao": {
             "sources": {
