@@ -2,7 +2,6 @@
 
 namespace Oneup\SecurityAdvisory\Check;
 
-use Contao\RequestToken;
 use Oneup\SecurityAdvisory\Audit\AuditRunner;
 
 class SecurityCheck extends \Backend implements \executable
@@ -48,7 +47,7 @@ class SecurityCheck extends \Backend implements \executable
             $objTemplate->lastChecked = \Date::parse($GLOBALS['TL_CONFIG']['datimFormat'], $auditRunner->getCacheLastModified());
         }
 
-        // Language string
+        // Language strings
         $objTemplate->headline = $GLOBALS['TL_LANG']['tl_security_advisory']['headline'];
         $objTemplate->disclaimer = $GLOBALS['TL_LANG']['tl_security_advisory']['disclaimer'];
         $objTemplate->runSecurityCheck = $GLOBALS['TL_LANG']['tl_security_advisory']['runSecurityCheck'];
@@ -56,7 +55,7 @@ class SecurityCheck extends \Backend implements \executable
         $objTemplate->noAuditFound = $GLOBALS['TL_LANG']['tl_security_advisory']['auditNotFound'];
         $objTemplate->auditFailed = $GLOBALS['TL_LANG']['tl_security_advisory']['auditFailed'];
         $objTemplate->lastCheckedLabel = $GLOBALS['TL_LANG']['tl_security_advisory']['lastCheckedLabel'];
-        $objTemplate->requestToken = RequestToken::get();
+        $objTemplate->requestToken = \RequestToken::get();
         $objTemplate->didNeverAnAudit = $GLOBALS['TL_LANG']['tl_security_advisory']['didNeverAnAudit'];
 
         return $objTemplate->parse();
