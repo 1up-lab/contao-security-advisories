@@ -21,6 +21,10 @@ class SecurityCheck extends \Backend implements \executable
         $auditRunner = new AuditRunner();
         $auditRunner->addLockFile(TL_ROOT . '/composer/composer.lock');
 
+        if (file_exists(TL_ROOT . '/composer.lock')) {
+            $auditRunner->addLockFile(TL_ROOT . '/composer.lock');
+        }
+
         // Init Audit.
         $audit = null;
 
