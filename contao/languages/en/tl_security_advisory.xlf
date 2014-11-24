@@ -23,9 +23,6 @@
       <trans-unit id="tl_security_advisory.lastCheckedLabel">
         <source>Last checked</source>
       </trans-unit>
-      <trans-unit id="tl_security_advisory.didNeverAnAudit">
-        <source>There was never made an audit on this system.</source>
-      </trans-unit>
 
       <trans-unit id="tl_security_advisory.mail_subject_ok">
         <source>Security audit succeeded on %s</source>

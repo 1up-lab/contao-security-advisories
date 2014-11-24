@@ -49,7 +49,7 @@ class SecurityCheck extends \Backend implements \executable
         $objTemplate->disclaimer = $GLOBALS['TL_LANG']['tl_security_advisory']['disclaimer'];
         $objTemplate->runSecurityCheck = $GLOBALS['TL_LANG']['tl_security_advisory']['runSecurityCheck'];
         $objTemplate->auditOk = $GLOBALS['TL_LANG']['tl_security_advisory']['auditOk'];
-        $objTemplate->noAuditFound = $GLOBALS['TL_LANG']['tl_security_advisory']['noAuditFound'];
+        $objTemplate->noAuditFound = $GLOBALS['TL_LANG']['tl_security_advisory']['auditNotFound'];
         $objTemplate->auditFailed = $GLOBALS['TL_LANG']['tl_security_advisory']['auditFailed'];
         $objTemplate->lastCheckedLabel = $GLOBALS['TL_LANG']['tl_security_advisory']['lastCheckedLabel'];
         $objTemplate->requestToken = RequestToken::get();
