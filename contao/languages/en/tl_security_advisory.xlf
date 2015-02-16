@@ -34,10 +34,10 @@
         <source>Hello Admin</source>
       </trans-unit>
       <trans-unit id="tl_security_advisory.mail_body_ok">
-        <source>A security audit was performed which succeeded without warnings.</source>
+        <source>A security audit was performed on %s which succeeded without warnings.</source>
       </trans-unit>
       <trans-unit id="tl_security_advisory.mail_body_failed">
-        <source>A security audit was performed which reveiled the following problems:</source>
+        <source>A security audit was performed on %s which reveiled the following problems:</source>
       </trans-unit>
     </body>
   </file>

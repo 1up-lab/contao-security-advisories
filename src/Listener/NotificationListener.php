@@ -38,8 +38,8 @@ class NotificationListener
 
         $objTemplate = new \FrontendTemplate('notification_mail');
         $objTemplate->headline = $GLOBALS['TL_LANG']['tl_security_advisory']['mail_headline'];
-        $objTemplate->bodyOk = $GLOBALS['TL_LANG']['tl_security_advisory']['mail_body_ok'];
-        $objTemplate->bodyFailed = $GLOBALS['TL_LANG']['tl_security_advisory']['mail_body_failed'];
+        $objTemplate->bodyOk = sprintf($GLOBALS['TL_LANG']['tl_security_advisory']['mail_body_ok'], \Idna::decode(\Environment::get('host')));
+        $objTemplate->bodyFailed = sprintf($GLOBALS['TL_LANG']['tl_security_advisory']['mail_body_failed'], \Idna::decode(\Environment::get('host')));
 
         $objTemplate->isVulnerable = $audit->isVulnerable();
         $objTemplate->vulnerabilites = $audit->getVulnerabilities();

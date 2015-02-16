@@ -48,12 +48,12 @@
         <target>Hallo Administrator</target>
       </trans-unit>
       <trans-unit id="tl_security_advisory.mail_body_ok">
-        <source>A security audit was performed which succeeded without warnings.</source>
-        <target>Ein Security-Audit wurde durchgeführt und ohne Warnung abgeschlossen.</target>
+        <source>A security audit was performed on %s  which succeeded without warnings.</source>
+        <target>Ein Security-Audit wurde auf %s durchgeführt und ohne Warnung abgeschlossen.</target>
       </trans-unit>
       <trans-unit id="tl_security_advisory.mail_body_failed">
-        <source>A security audit was performed which reveiled the following problems:</source>
-        <target>in Security-Audit wurde durchgeführt und hat die folgenden potentiellen Sicherheitslücken gefunden:</target>
+        <source>A security audit was performed on %s which reveiled the following problems:</source>
+        <target>in Security-Audit wurde auf %s durchgeführt und hat die folgenden potentiellen Sicherheitslücken gefunden:</target>
       </trans-unit>
     </body>
   </file>
