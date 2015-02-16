@@ -1,9 +1,9 @@
 <?php
 
-$GLOBALS['TL_CSS'][] = 'system/modules/security-advisories/assets/css/security-advisories.css';
-
 $GLOBALS['BE_MOD']['system']['security_advisory'] = [
-    'callback' => 'Oneup\SecurityAdvisory\Module\ModuleSecurityAdvisory'
+    'icon'          => 'system/modules/security-advisories/assets/images/security-advisory.png',
+    'stylesheet'    => 'system/modules/security-advisories/assets/css/security-advisories.css',
+    'callback'      => 'Oneup\SecurityAdvisory\Module\ModuleSecurityAdvisory'
 ];
 
 $GLOBALS['TL_SECURITY_ADVISORY'] = ['Oneup\SecurityAdvisory\Check\SecurityCheck'];

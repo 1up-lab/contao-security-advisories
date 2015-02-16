@@ -1,7 +1,3 @@
-a.navigation.security_advisory {
-    background-image: url("../images/security-advisory.png");
-}
-
 .tl_security_advisories .last-checked {
     display:inline-block;
     margin-left:10px;
