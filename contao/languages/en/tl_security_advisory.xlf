@@ -25,10 +25,10 @@
       </trans-unit>
 
       <trans-unit id="tl_security_advisory.mail_subject_ok">
-        <source>Security audit succeeded on %s</source>
+        <source>[%s]: Security audit succeeded!</source>
       </trans-unit>
       <trans-unit id="tl_security_advisory.mail_subject_failed">
-        <source>Security audit reveiled potentail vulnerabilites on %s</source>
+        <source>[%s]: Security audit reveiled potentail vulnerabilites!</source>
       </trans-unit>
       <trans-unit id="tl_security_advisory.mail_headline">
         <source>Hello Admin</source>

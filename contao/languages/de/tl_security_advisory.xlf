@@ -36,12 +36,12 @@
       </trans-unit>
 
       <trans-unit id="tl_security_advisory.mail_subject_ok">
-        <source>Security audit succeeded on %s</source>
-        <target>Security-Audit ohne Warnung auf %s abgeschlossen.</target>
+        <source>[%s]: Security audit succeeded!</source>
+        <target>[%s]: Security-Audit ohne Warnung abgeschlossen!</target>
       </trans-unit>
       <trans-unit id="tl_security_advisory.mail_subject_failed">
-        <source>Security audit reveiled potentail vulnerabilites on %s</source>
-        <target>Ein Security-Audit hat potentielle Sicherheitsprobleme auf %s gefunden</target>
+        <source>[%s]: Security audit reveiled potentail vulnerabilites!</source>
+        <target>[%s]: Ein Security-Audit hat potentielle Sicherheitsprobleme gefunden!</target>
       </trans-unit>
       <trans-unit id="tl_security_advisory.mail_headline">
         <source>Hello Admin</source>
