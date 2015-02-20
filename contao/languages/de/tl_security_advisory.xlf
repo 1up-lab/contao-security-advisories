@@ -53,7 +53,7 @@
       </trans-unit>
       <trans-unit id="tl_security_advisory.mail_body_failed">
         <source>A security audit was performed on %s which reveiled the following problems:</source>
-        <target>in Security-Audit wurde auf %s durchgeführt und hat die folgenden potentiellen Sicherheitslücken gefunden:</target>
+        <target>Ein Security-Audit wurde auf %s durchgeführt und hat die folgenden potentiellen Sicherheitslücken gefunden:</target>
       </trans-unit>
     </body>
   </file>
