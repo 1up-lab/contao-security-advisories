@@ -8,7 +8,7 @@
 
 <?php foreach ($this->vulnerabilites as $vulnerability): ?>
 <?php foreach ($vulnerability['advisories'] as $advisory): ?>
-    - <?php echo sprintf('%s (%s): %s', $vulnerability['name'], $vulnerability['version'], $advisory['title']); ?>
+    - <?php echo sprintf('%s (%s): %s%s', $vulnerability['name'], $vulnerability['version'], $advisory['title'], "\n"); ?>
 <?php endforeach; ?>
 <?php endforeach; ?>
 <?php endif; ?>
