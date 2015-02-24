@@ -9,12 +9,14 @@ This extension provides a way to automatically or manually check your installed 
 
 -- 
 
-Features includes:
+Features included:
 * Perform the check regularly.
 * Get an E-Mail if the audit failed in any way. (Or always get an email if a check was performed. Your choice.)
 * Start the check manually.
 * Suppress notifications for manually started checks.
 
-*Note*: A clean check does not imply that there are no security problems present, it just means that the test against the underlying database reveiled nothing.
+--
 
 ![Screenshot](http://i.imgur.com/Jo8j20N.png)
+
+**Note**: A clean check does not imply that there are no security problems present, it just means that the test against the underlying database reveiled nothing.
