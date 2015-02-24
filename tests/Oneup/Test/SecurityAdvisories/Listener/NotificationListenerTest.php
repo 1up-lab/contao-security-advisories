@@ -9,6 +9,6 @@ class NotifcationListenerTest extends \PHPUnit_Framework_TestCase
      */
     public function testLoadClass()
     {
-        $this->assertTrue(true == true);
+        $this->assertTrue(true);
     }
 }
