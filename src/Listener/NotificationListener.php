@@ -11,7 +11,7 @@ class NotificationListener
         $enabled              = (bool) $GLOBALS['TL_CONFIG']['securityAdvisory_enableNotifications'];
         $suppressManualAudits = (bool) $GLOBALS['TL_CONFIG']['securityAdvisory_suppressManualAuditNotification'];
         $onlyFailed           = (bool) $GLOBALS['TL_CONFIG']['securityAdvisory_onlyFailedNotifications'];
-        $notifiactionMail     =        $GLOBALS['TL_CONFIG']['securityAdvisory_notificationMail'];
+        $notificationMail     =        $GLOBALS['TL_CONFIG']['securityAdvisory_notificationMail'];
         $administratorMail    =        $GLOBALS['TL_CONFIG']['adminEmail'];
 
         if (!$enabled) {
@@ -29,7 +29,7 @@ class NotificationListener
         // Load language file
         \System::loadLanguageFile('tl_security_advisory');
 
-        $address = strlen($notifiactionMail) > 0 ? $notifiactionMail : $administratorMail;
+        $address = strlen($notificationMail) > 0 ? $notificationMail : $administratorMail;
 
         $objEmail= new \Email();
         $objEmail->from = $GLOBALS['TL_ADMIN_EMAIL'];
