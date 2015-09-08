@@ -4,8 +4,8 @@ Contao Security Advisories
 This extension provides a way to automatically or manually check your installed vendor extensions and the Contao core against the open vulnerability database at [FriendsOfPHP/security-advisories](https://github.com/FriendsOfPHP/security-advisories).
 
 [![Author](http://img.shields.io/badge/author-@1upgmbh-blue.svg?style=flat-square)](https://twitter.com/1upgmbh)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![Total Downloads](https://img.shields.io/packagist/dt/oneup/contao-security-advisories.svg?style=flat-square)](https://packagist.org/packages/oneup/contao-security-advisories)
+[![Software License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
+[![Total Downloads](http://img.shields.io/packagist/dt/oneup/contao-security-advisories.svg?style=flat-square)](https://packagist.org/packages/oneup/contao-security-advisories)
 
 -- 
 
