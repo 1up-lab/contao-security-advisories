@@ -34,6 +34,12 @@
     "require-dev": {
         "phpunit/phpunit": "~3.7"
     },
+    "repositories": [
+            {
+                "type": "vcs",
+                "url": "https://github.com/aschempp/composer-plugin"
+            }
+    },
     "conflict": {
         "contao/core": "3.4.0"
     },
