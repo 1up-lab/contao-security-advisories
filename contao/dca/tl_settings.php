@@ -6,6 +6,7 @@ $GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] = str_replace('defaultC
 $GLOBALS['TL_DCA']['tl_settings']['palettes']['__selector__'][] = 'securityAdvisory_enableCron';
 $GLOBALS['TL_DCA']['tl_settings']['palettes']['__selector__'][] = 'securityAdvisory_enableNotifications';
 
+$GLOBALS['TL_DCA']['tl_settings']['subpalettes'] = $GLOBALS['TL_DCA']['tl_settings']['subpalettes'] ?: [];
 $GLOBALS['TL_DCA']['tl_settings']['subpalettes'] += [
     'securityAdvisory_enableCron' => 'securityAdvisory_cronCycle'
 ];
