@@ -39,7 +39,7 @@
             "type": "vcs",
             "url": "https://github.com/aschempp/composer-plugin"
         }
-    },
+    ],
     "conflict": {
         "contao/core": "3.4.0"
     },
