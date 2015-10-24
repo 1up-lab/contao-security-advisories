@@ -18,11 +18,7 @@ class SecurityCheck extends \Backend implements \executable
         $objTemplate = new \BackendTemplate('be_security_check');
 
         $auditRunner = new AuditRunner();
-        $auditRunner->addLockFile(TL_ROOT . '/composer/composer.lock');
-
-        if (file_exists(TL_ROOT . '/composer.lock')) {
-            $auditRunner->addLockFile(TL_ROOT . '/composer.lock');
-        }
+        $auditRunner->addLockFile(TL_ROOT . '/composer.lock');
 
         // Init Audit.
         $audit = null;
