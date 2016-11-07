@@ -28,8 +28,11 @@ class AuditRunner extends \System
         foreach ($this->lockFiles as $lockFile) {
             $response = $this->guzzle->request('POST', '/check_lock', [
                 'headers' => ['Accept' => 'application/json'],
-                'form_params' => [
-                    'lock' => fopen($lockFile, 'r')
+                'multipart' => [
+                    [
+                        'name' => 'lock',
+                        'contents' => fopen($lockFile, 'r')
+                    ],
                 ]
             ]);
 
