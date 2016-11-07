@@ -12,9 +12,13 @@ class AuditRunner extends \System
 
     public function __construct()
     {
+        parent::__construct();
+
         $this->lockFiles = [];
         $this->auditCache = TL_ROOT . '/system/cache/security-audit.json';
-        $this->guzzle = new Client();
+        $this->guzzle = new Client([
+            'base_uri' => 'https://security.sensiolabs.org',
+        ]);
     }
 
     public function run()
@@ -22,13 +26,13 @@ class AuditRunner extends \System
         $audit = new Audit();
 
         foreach ($this->lockFiles as $lockFile) {
-            $request = $this->guzzle->createRequest('POST', 'https://security.sensiolabs.org/check_lock', [
+            $response = $this->guzzle->request('POST', '/check_lock', [
                 'headers' => ['Accept' => 'application/json'],
                 'body' => ['lock' => fopen($lockFile, 'r')]
             ]);
 
             // get actual response body
-            $responseBody = $this->guzzle->send($request)->getBody()->getContents();
+            $responseBody =$response->getBody()->getContents();
 
             // add body to audit
             $audit->addResponse($responseBody);
