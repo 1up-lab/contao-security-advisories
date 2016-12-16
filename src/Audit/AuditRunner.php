@@ -15,7 +15,7 @@ class AuditRunner extends \System
         parent::__construct();
 
         $this->lockFiles = [];
-        $this->auditCache = TL_ROOT . '/system/cache/security-audit.json';
+        $this->auditCache = TL_ROOT.'/system/cache/security-audit.json';
         $this->guzzle = new Client([
             'base_uri' => 'https://security.sensiolabs.org',
         ]);
@@ -31,13 +31,13 @@ class AuditRunner extends \System
                 'multipart' => [
                     [
                         'name' => 'lock',
-                        'contents' => fopen($lockFile, 'r')
+                        'contents' => fopen($lockFile, 'r'),
                     ],
                 ]
             ]);
 
             // get actual response body
-            $responseBody =$response->getBody()->getContents();
+            $responseBody = $response->getBody()->getContents();
 
             // add body to audit
             $audit->addResponse($responseBody);
@@ -46,10 +46,8 @@ class AuditRunner extends \System
         $this->cacheAudit($audit);
 
         // HOOK: add custom logic
-        if (isset($GLOBALS['TL_HOOKS']['securityAuditPerformed']) && is_array($GLOBALS['TL_HOOKS']['securityAuditPerformed']))
-        {
-            foreach ($GLOBALS['TL_HOOKS']['securityAuditPerformed'] as $callback)
-            {
+        if (isset($GLOBALS['TL_HOOKS']['securityAuditPerformed']) && is_array($GLOBALS['TL_HOOKS']['securityAuditPerformed'])) {
+            foreach ($GLOBALS['TL_HOOKS']['securityAuditPerformed'] as $callback) {
                 $this->import($callback[0]);
                 $this->{$callback[0]}->{$callback[1]}($audit);
             }

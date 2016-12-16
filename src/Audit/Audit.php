@@ -21,7 +21,7 @@ class Audit
             $data = [
                 'name' => $key,
                 'version' => $vulnerability['version'],
-                'advisories' => array_values($vulnerability['advisories'])
+                'advisories' => array_values($vulnerability['advisories']),
             ];
 
             $vulnerabilities[] = $data;

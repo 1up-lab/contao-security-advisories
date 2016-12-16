@@ -31,7 +31,7 @@ class NotificationListener
 
         $address = strlen($notificationMail) > 0 ? $notificationMail : $administratorMail;
 
-        $objEmail= new \Email();
+        $objEmail = new \Email();
         $objEmail->from = $GLOBALS['TL_ADMIN_EMAIL'];
         $objEmail->fromName = $GLOBALS['TL_ADMIN_NAME'];
         $objEmail->subject = sprintf($GLOBALS['TL_LANG']['tl_security_advisory'][$audit->isVulnerable() ? 'mail_subject_failed' : 'mail_subject_ok'], \Idna::decode(\Environment::get('host')));
