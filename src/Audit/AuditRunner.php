@@ -42,7 +42,7 @@ class AuditRunner extends \System
             foreach ($GLOBALS['TL_HOOKS']['securityAuditPerformed'] as $callback)
             {
                 $this->import($callback[0]);
-                $this->$callback[0]->$callback[1]($audit);
+                $this->{$callback[0]}->{$callback[1]}($audit);
             }
         }
 
