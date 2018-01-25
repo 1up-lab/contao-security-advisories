@@ -46,7 +46,9 @@ foreach ([
 
 if($GLOBALS['TL_CONFIG']['securityAdvisory_enableAPI']) {
 
-    if(isset($_GET['token']) && $_GET['token'] == $GLOBALS['TL_CONFIG']['securityAdvisory_APIKey']) {
+    $headers = apache_request_headers();
+
+    if(isset($headers['authorization-token']) && $headers['authorization-token'] === $GLOBALS['TL_CONFIG']['securityAdvisory_APIKey']) {
         $foundFiles = [];
 
         foreach ($possibleLockfiles as $possibilities) {
@@ -70,7 +72,7 @@ if($GLOBALS['TL_CONFIG']['securityAdvisory_enableAPI']) {
         }
 
     } else {
-        die('Wrong API token');
+        die('No or incorrect authorization-token provided!');
     }
 
 } else {
