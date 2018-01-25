@@ -1,15 +1,5 @@
 <?php
 
-/**
- * Contao Open Source CMS
- *
- * Copyright (c) 2005-2015 Leo Feyer
- *
- * @license LGPL-3.0+
- */
-
-error_reporting(1);
-
 // Set the script name
 define('TL_SCRIPT', 'audit.php');
 
@@ -45,10 +35,7 @@ foreach ([
 }
 
 if($GLOBALS['TL_CONFIG']['securityAdvisory_enableAPI']) {
-
-    $headers = apache_request_headers();
-
-    if(isset($headers['authorization-token']) && $headers['authorization-token'] === $GLOBALS['TL_CONFIG']['securityAdvisory_APIKey']) {
+    if(isset($_SERVER['HTTP_AUTHORIZATION_TOKEN']) && $_SERVER['HTTP_AUTHORIZATION_TOKEN'] === $GLOBALS['TL_CONFIG']['securityAdvisory_APIKey']) {
         $foundFiles = [];
 
         foreach ($possibleLockfiles as $possibilities) {
@@ -61,12 +48,12 @@ if($GLOBALS['TL_CONFIG']['securityAdvisory_enableAPI']) {
         }
 
         if(count($foundFiles) > 0) {
-            $contents['locks'];
+            $contents = ['locks' => []];
             foreach ($foundFiles as $lockFile) {
                 $contents['locks'][] = file_get_contents($lockFile);
             }
 
-            echo \GuzzleHttp\json_encode($contents);
+            echo json_encode($contents);
         } else {
             die('No composer.lock files found on server');
         }
