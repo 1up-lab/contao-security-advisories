@@ -27,6 +27,18 @@
       <trans-unit id="tl_settings.securityAdvisory_enableCron.1">
         <source>Enable a cron job which checks your composer locks recurrently.</source>
       </trans-unit>
+      <trans-unit id="tl_settings.securityAdvisory_enableAPI.0">
+        <source>Enable Guard-API</source>
+      </trans-unit>
+      <trans-unit id="tl_settings.securityAdvisory_enableAPI.1">
+        <source>Activates API for external security audits.</source>
+      </trans-unit>
+      <trans-unit id="tl_settings.securityAdvisory_APIKey.0">
+        <source>API-Key</source>
+      </trans-unit>
+      <trans-unit id="tl_settings.securityAdvisory_APIKey.1">
+        <source>The api key used to connect.</source>
+      </trans-unit>
       <trans-unit id="tl_settings.securityAdvisory_cronCycle.0">
         <source>Audit cycle</source>
       </trans-unit>
