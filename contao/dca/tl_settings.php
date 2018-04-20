@@ -1,10 +1,11 @@
 <?php
 
-$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] = str_replace('defaultChmod;', 'defaultChmod;{securityAdvisory_legend:hide},securityAdvisory_enableCron,securityAdvisory_enableNotifications;', $GLOBALS['TL_DCA']['tl_settings']['palettes']['default']);
+$GLOBALS['TL_DCA']['tl_settings']['palettes']['default'] = str_replace('defaultChmod;', 'defaultChmod;{securityAdvisory_legend:hide},securityAdvisory_enableCron,securityAdvisory_enableNotifications,securityAdvisory_enableAPI;', $GLOBALS['TL_DCA']['tl_settings']['palettes']['default']);
 
 // Register subpalettes
 $GLOBALS['TL_DCA']['tl_settings']['palettes']['__selector__'][] = 'securityAdvisory_enableCron';
 $GLOBALS['TL_DCA']['tl_settings']['palettes']['__selector__'][] = 'securityAdvisory_enableNotifications';
+$GLOBALS['TL_DCA']['tl_settings']['palettes']['__selector__'][] = 'securityAdvisory_enableAPI';
 
 $GLOBALS['TL_DCA']['tl_settings']['subpalettes'] += [
     'securityAdvisory_enableCron' => 'securityAdvisory_cronCycle'
@@ -12,6 +13,10 @@ $GLOBALS['TL_DCA']['tl_settings']['subpalettes'] += [
 
 $GLOBALS['TL_DCA']['tl_settings']['subpalettes'] += [
     'securityAdvisory_enableNotifications' => 'securityAdvisory_notificationMail,securityAdvisory_suppressManualAuditNotification,securityAdvisory_onlyFailedNotifications'
+];
+
+$GLOBALS['TL_DCA']['tl_settings']['subpalettes'] += [
+    'securityAdvisory_enableAPI' => 'securityAdvisory_APIKey'
 ];
 
 $GLOBALS['TL_DCA']['tl_settings']['fields'] += array(
@@ -27,6 +32,15 @@ $GLOBALS['TL_DCA']['tl_settings']['fields'] += array(
     'securityAdvisory_enableNotifications' => array
     (
         'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['securityAdvisory_enableNotifications'],
+        'exclude'                 => true,
+        'filter'                  => true,
+        'inputType'               => 'checkbox',
+        'eval'                    => array('submitOnChange'=>true),
+        'sql'                     => "char(1) NOT NULL default ''"
+    ),
+    'securityAdvisory_enableAPI' => array
+    (
+        'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['securityAdvisory_enableAPI'],
         'exclude'                 => true,
         'filter'                  => true,
         'inputType'               => 'checkbox',
@@ -56,6 +70,12 @@ $GLOBALS['TL_DCA']['tl_settings']['fields'] += array(
         'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['securityAdvisory_notificationMail'],
         'inputType'               => 'text',
         'eval'                    => array('rgxp'=>'friendly', 'decodeEntities'=>true)
+    ),
+    'securityAdvisory_APIKey' => array
+    (
+        'label'                   => &$GLOBALS['TL_LANG']['tl_settings']['securityAdvisory_APIKey'],
+        'inputType'               => 'text',
+        'eval'                    => array('includeBlankOption'=> false, 'submitOnChange' => false, 'mandatory' => true)
     ),
     'securityAdvisory_cronCycle' => array
     (
