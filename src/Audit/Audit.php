@@ -16,7 +16,6 @@ class Audit
         // Decode and get it as an array instead of stdClass
         $response = json_decode($response, true);
 
-        $vulnerabilities = [];
         foreach ($response as $key => $vulnerability) {
             $data = [
                 'name' => $key,
@@ -24,10 +23,8 @@ class Audit
                 'advisories' => array_values($vulnerability['advisories'])
             ];
 
-            $vulnerabilities[] = $data;
+            $this->vulnerabilities[] = $data;
         }
-
-        $this->vulnerabilities = $vulnerabilities;
     }
 
     public function isVulnerable()
